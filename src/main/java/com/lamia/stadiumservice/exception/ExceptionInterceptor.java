@@ -19,7 +19,7 @@ public class ExceptionInterceptor extends ResponseEntityExceptionHandler {
     @ExceptionHandler(CommonException.class)
     public final ResponseEntity<Object> handleAllExceptions(CommonException ex) {
         CommonResponse exceptionResponse = new CommonResponse();
-//        exceptionResponse.setErrorSchema(ex.getErrorSchema());
+        exceptionResponse.setErrorSchema(ex.getErrorSchema());
         exceptionResponse.setOutputSchema(ex.getOutputSchema());
         return new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
